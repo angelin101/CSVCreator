@@ -73,4 +73,14 @@ public class Product implements Comparable<Product>{
         result = 17 * result + article.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", tradeMark='" + tradeMark + '\'' +
+                ", article='" + article + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

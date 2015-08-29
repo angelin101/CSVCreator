@@ -1,5 +1,7 @@
 package CSVManager;
 
+import java.io.*;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -9,8 +11,27 @@ import java.util.List;
 public class ReaderCSV implements Readable {
 
     @Override
-    public List<Product> readFromFile(String fileName) {
+    public List<Product> readFromFile(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
+        String line;
+        List<Product> list = new LinkedList<>();
+        try(BufferedReader read = new BufferedReader(new FileReader(file))) {
+            while ((line = read.readLine()) != null){
+                list.add(convertOneProduct(line));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
-        return null;
+    private Product convertOneProduct(String line){
+        Product obj = new Product();
+        String[] str = line.split(";");
+        obj.setName(str[0]);
+        obj.setTradeMark(str[1]);
+        obj.setArticle(str[2]);
+        obj.setPrice(Integer.parseInt(str[3]));
+        return obj;
     }
 }
