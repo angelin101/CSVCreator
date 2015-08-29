@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Ангелин on 29.08.2015.
  */
-public class ReaderCSV implements Readable {
+public class Reader implements CSVReader {
 
     @Override
     public List<Product> readFromFile(String fileName) throws FileNotFoundException {

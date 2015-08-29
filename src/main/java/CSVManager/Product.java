@@ -1,6 +1,10 @@
 package CSVManager;
 
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 /**
  * Created by Ангелин on 29.08.2015.
  */
@@ -45,13 +49,6 @@ public class Product implements Comparable<Product>{
     public Product(){
 
     }
-    public Product(boolean isRandom){
-        if (isRandom){
-            name = "Name";
-            tradeMark = "Trade Mark";
-            article = "Article";
-        }
-    }
 
     public Product(String name, String tradeMark, String article, int price){
         this.name = name;
@@ -60,6 +57,30 @@ public class Product implements Comparable<Product>{
         this.price = price;
     }
 
+    public static void sortedDataBy(List<Product> list, CompareType sortBy){
+        switch (sortBy){
+            case BY_NAME:
+                Collections.sort(list, new Comparator<Product>() {
+                    @Override
+                    public int compare(Product p1, Product p2) {
+
+                        return 0;
+                    }
+                });
+                break;
+            case BY_TRADE_MARK:
+                System.out.println();
+                break;
+            case BY_PRICE:
+                System.out.println();
+                break;
+            case DEFAULT:
+                System.out.println();
+                break;
+        }
+    }
+
+    @Override
     public int compareTo(Product obj) {
         return this.article.compareTo(obj.article);
     }

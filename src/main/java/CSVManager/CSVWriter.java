@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Ангелин on 22.08.2015.
  */
-public interface Writable {
+public interface CSVWriter {
     void writeToFile(String fileName, List<Product> Data, boolean appendToFile) throws FileNotFoundException;
     void writeToFileRandomData(String fileName, int lineValue) throws FileNotFoundException;
 }

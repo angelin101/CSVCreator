@@ -5,13 +5,11 @@ import org.junit.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by Ангелин on 29.08.2015.
  */
-public class WriterCSVTest {
-    WriterCSV wTest = new WriterCSV();
+public class WriterTest {
+    Writer wTest = new Writer();
 
     @Test
     public void testWriteToFile() throws Exception {
@@ -22,12 +20,12 @@ public class WriterCSVTest {
         list.add(prod1);
         list.add(prod2);
         list.add(prod3);
-        WriterCSV wTest = new WriterCSV();
+        Writer wTest = new Writer();
         wTest.writeToFile("Test file.csv", list, true);
     }
 
     @Test
     public void testWriteToFileRandomData() throws Exception {
-        wTest.writeToFileRandomData("Test random file.csv", 4);
+        wTest.writeToFileRandomData("Test random file.csv", 6);
     }
 }
