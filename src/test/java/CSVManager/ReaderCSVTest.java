@@ -14,7 +14,7 @@ public class ReaderCSVTest {
     @Test
     public void testReadFromFile() throws Exception {
         ReaderCSV test = new ReaderCSV();
-        List<Product> list = test.readFromFile("Test file.csv");
+        List<Product> list = test.readFromFile("Test random file.csv");
         System.out.println(list.size());
         for (Product p : list){
             System.out.println(p);

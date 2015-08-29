@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
  * Created by Ангелин on 29.08.2015.
  */
 public class WriterCSVTest {
+    WriterCSV wTest = new WriterCSV();
 
     @Test
     public void testWriteToFile() throws Exception {
@@ -23,5 +24,10 @@ public class WriterCSVTest {
         list.add(prod3);
         WriterCSV wTest = new WriterCSV();
         wTest.writeToFile("Test file.csv", list, true);
+    }
+
+    @Test
+    public void testWriteToFileRandomData() throws Exception {
+        wTest.writeToFileRandomData("Test random file.csv", 4);
     }
 }

@@ -1,9 +1,8 @@
 package CSVManager;
 
-import java.util.Date;
 
 /**
- * Created by Ангелин on 22.08.2015.
+ * Created by Ангелин on 29.08.2015.
  */
 public class Product implements Comparable<Product>{
     private String name;
@@ -45,6 +44,13 @@ public class Product implements Comparable<Product>{
 
     public Product(){
 
+    }
+    public Product(boolean isRandom){
+        if (isRandom){
+            name = "Name";
+            tradeMark = "Trade Mark";
+            article = "Article";
+        }
     }
 
     public Product(String name, String tradeMark, String article, int price){

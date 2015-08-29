@@ -6,7 +6,7 @@ import java.util.List;
 
 
 /**
- * Created by Ангелин on 22.08.2015.
+ * Created by Ангелин on 29.08.2015.
  */
 public class ReaderCSV implements Readable {
 
@@ -24,7 +24,7 @@ public class ReaderCSV implements Readable {
         }
         return list;
     }
-
+    // Метод конвертирующий одну строку в один обьект Product
     private Product convertOneProduct(String line){
         Product obj = new Product();
         String[] str = line.split(";");

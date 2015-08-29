@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.List;
 
 /**
- * Created by Ангелин on 22.08.2015.
+ * Created by Ангелин on 29.08.2015.
  */
 public class WriterCSV implements Writable {
     private final String SEPARATOR = ";";
@@ -26,11 +26,14 @@ public class WriterCSV implements Writable {
         return obj.getName()+SEPARATOR+obj.getTradeMark()+SEPARATOR+obj.getArticle()+SEPARATOR+obj.getPrice();
     }
 
-    // Need realization
     @Override
-    public void writeToFileRandomData(String fileName, int lineValue) {
+    public void writeToFileRandomData(String fileName, int lineValue) throws FileNotFoundException {
         file = new File(fileName);
-        Product randomProduct = new Product();
-        // ...........
+        write = new PrintWriter((new BufferedOutputStream(new FileOutputStream(file))), true);
+        Product randProd = new Product(true);
+        for (int i = 1; i <= lineValue; i++){
+            write.println(randProd.getName()+i+SEPARATOR+randProd.getTradeMark()+i
+                    +SEPARATOR+randProd.getArticle()+i+SEPARATOR+((int)(Math.random()*100)));
+        }
     }
 }

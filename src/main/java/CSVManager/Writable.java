@@ -8,5 +8,5 @@ import java.util.List;
  */
 public interface Writable {
     void writeToFile(String fileName, List<Product> Data, boolean appendToFile) throws FileNotFoundException;
-    void writeToFileRandomData(String fileName, int lineValue);
+    void writeToFileRandomData(String fileName, int lineValue) throws FileNotFoundException;
 }
