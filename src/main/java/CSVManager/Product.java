@@ -63,19 +63,28 @@ public class Product implements Comparable<Product>{
                 Collections.sort(list, new Comparator<Product>() {
                     @Override
                     public int compare(Product p1, Product p2) {
-
-                        return 0;
+                        return p1.getName().compareTo(p2.getName());
                     }
                 });
                 break;
             case BY_TRADE_MARK:
-                System.out.println();
+                Collections.sort(list, new Comparator<Product>() {
+                    @Override
+                    public int compare(Product p1, Product p2) {
+                        return p1.getTradeMark().compareTo(p2.getTradeMark());
+                    }
+                });
                 break;
             case BY_PRICE:
-                System.out.println();
+                Collections.sort(list, new Comparator<Product>() {
+                    @Override
+                    public int compare(Product p1, Product p2) {
+                        return Integer.compare(p1.getPrice(), p2.getPrice());
+                    }
+                });
                 break;
             case DEFAULT:
-                System.out.println();
+                Collections.sort(list);
                 break;
         }
     }
