@@ -7,5 +7,5 @@ import java.util.List;
  * Created by Ангелин on 22.08.2015.
  */
 public interface CSVReader {
-    List<Product> readFromFile(String fileName) throws FileNotFoundException;
+    List<Product> readFromFile(String fileName) throws FileNotFoundException, InvalidNumberOfLinesException, IncorrectValueException;
 }
