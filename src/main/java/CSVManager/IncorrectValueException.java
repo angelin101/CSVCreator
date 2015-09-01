@@ -7,6 +7,9 @@ import java.io.IOException;
  */
 public class IncorrectValueException extends Exception{
     private String msg;
+    public IncorrectValueException(){
+        msg = "";
+    }
     public IncorrectValueException(String s){
         this.msg = s;
     }

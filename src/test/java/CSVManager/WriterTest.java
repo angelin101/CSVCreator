@@ -26,6 +26,6 @@ public class WriterTest {
 
     @Test
     public void testWriteToFileRandomData() throws Exception {
-        wTest.writeToFileRandomData("Test random file.csv", 6);
+        wTest.writeToFileRandomData("Test random file.csv", 7);
     }
 }

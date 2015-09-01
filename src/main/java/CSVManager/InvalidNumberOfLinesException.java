@@ -5,6 +5,9 @@ package CSVManager;
  */
 public class InvalidNumberOfLinesException extends Exception{
     private String msg;
+    public InvalidNumberOfLinesException(){
+        msg = "";
+    }
     public InvalidNumberOfLinesException(String s) {
         this.msg = s;
     }

@@ -1,5 +1,7 @@
 package CSVManager;
 
+import org.apache.log4j.Logger;
+
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.regex.*;
  */
 public class Reader implements CSVReader {
     private File file;
+    private final String SEPARATOR = ";";
+    private final Logger LOG = Logger.getLogger(Reader.class);
 
     @Override
     public List<Product> readFromFile(String fileName) throws FileNotFoundException, InvalidNumberOfLinesException, IncorrectValueException{
@@ -22,23 +26,27 @@ public class Reader implements CSVReader {
                 list.add(convertOneProduct(line));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.error("Catch IO Exception!!!", e);
         }
+        LOG.info("Данные считаны из файла '"+fileName+"' в List<Product>. Вышло - "+list.size()+" обьектов.");
         return list;
     }
     // Метод конвертирующий одну строку в один обьект Product
     private Product convertOneProduct(String line) throws InvalidNumberOfLinesException, IncorrectValueException{
         Product obj = new Product();
-        String[] str = line.split(";");
+        String[] str = line.split(SEPARATOR);
         if(str.length > 4){
-            throw new InvalidNumberOfLinesException("\nВ файле "+file.getName()+", у продукта "+str[0]+" больше 4-х значений!");
+            LOG.warn("Неверное количество столбцов!!! В файле '"+file.getName()+"', у продукта "+str[0]+" больше 4-х значений!");
+            throw new InvalidNumberOfLinesException();
         }
         else if(str.length < 4){
-            throw new InvalidNumberOfLinesException("\nВ файле "+file.getName()+", у продукта "+str[0]+" меньше 4-х значений!");
+            LOG.warn("Неверное количество столбцов!!! В файле '"+file.getName()+"', у продукта "+str[0]+" меньше 4-х значений!");
+            throw new InvalidNumberOfLinesException("");
         }
         for (int i = 0; i < 3; i++){
             if (testOnValidation(str[i])){
-                throw new IncorrectValueException("\nВ файле "+file.getName()+", столбец № "+(i+1)+" содержит числовое значение!");
+                LOG.warn("Неверный тип данных!!! В файле '"+file.getName()+"', столбец № "+(i+1)+" содержит числовое значение!");
+                throw new IncorrectValueException();
             }
         }
         obj.setName(str[0]);

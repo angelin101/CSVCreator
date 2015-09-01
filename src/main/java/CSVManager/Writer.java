@@ -1,5 +1,7 @@
 package CSVManager;
 
+import org.apache.log4j.Logger;
+
 import java.io.*;
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,15 +14,17 @@ public class Writer implements CSVWriter {
     private final String SEPARATOR = ";";
     private File file;
     private PrintWriter write;
+    private final Logger LOG = Logger.getLogger(Writer.class);
 
     @Override
-    public void writeToFile(String fileName, List<Product> Data, boolean appendToFile) throws FileNotFoundException{
+    public void writeToFile(String fileName, List<Product> data, boolean appendToFile) throws FileNotFoundException{
         file = new File(fileName);
-            write = new PrintWriter((new BufferedOutputStream(new FileOutputStream(file, appendToFile))), true);
-            for (Product a : Data){
-                write.println(recordOneProduct(a));
-            }
-            write.close();
+        write = new PrintWriter((new BufferedOutputStream(new FileOutputStream(file, appendToFile))), true);
+        for (Product a : data){
+            write.println(recordOneProduct(a));
+        }
+        write.close();
+        LOG.info("Данные записаны в файл - '"+fileName+"'. Зашло - "+data.size()+" строк.");
     }
 
    // Приватный метод записывающий один обьект Product в строку и возвращает её
@@ -35,5 +39,7 @@ public class Writer implements CSVWriter {
         for (int i = 1; i <= lineValue; i++){
             write.println("Name"+i+SEPARATOR+"Trade Mark"+i+SEPARATOR+"Article"+i+SEPARATOR+(int)(Math.random()*100));
         }
+        write.close();
+        LOG.info("Рандомные данные записаны в файл - '"+fileName+"'. Зашло - "+lineValue+" строк.");
     }
 }

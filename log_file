@@ -1,0 +1,11 @@
+WARN 2015-09-01 21:14:30 CSVManager.Reader:47 - Неверный тип данных!!! В файле 'Test random file.csv', столбец № 2 содержит числовое значение!
+INFO 2015-09-01 21:18:21 CSVManager.Reader:31 - Данные считаны из файла 'Test random file.csv' в List<Product>
+INFO 2015-09-01 21:19:54 CSVManager.Reader:31 - Данные считаны из файла 'Test random file.csv' в List<Product> Вышло - 6 обьектов.INFO 2015-09-01 21:27:19 CSVManager.Reader: readFromFile() 31 - Данные считаны из файла 'Test random file.csv' в List<Product>. Вышло - 6 обьектов.
+INFO 2015-09-01 21:28:08 CSVManager.Reader: readFromFile() 31 - Данные считаны из файла 'Test random file.csv' в List<Product>. Вышло - 6 обьектов.
+INFO 2015-09-01 21:29:13 CSVManager.Reader: readFromFile() 31 - Данные считаны из файла 'Test random file.csv' в List<Product>. Вышло - 6 обьектов.
+WARN 2015-09-01 21:29:55 CSVManager.Reader: convertOneProduct() 48 - Неверный тип данных!!! В файле 'Test random file.csv', столбец № 2 содержит числовое значение!
+INFO 2015-09-01 21:41:26 CSVManager.Writer: writeToFileRandomData() 43 - Рандомные данные записаны в файл - 'Test random file.csv'. Зашло - 7 строк.
+INFO 2015-09-01 21:42:15 CSVManager.Writer: writeToFile() 27 - Данные записаны в файл - 'Test file.csv'. Зашло - 3 строк.
+INFO 2015-09-01 21:49:31 CSVManager.Reader: readFromFile() 31 - Данные считаны из файла 'Test random file.csv' в List<Product>. Вышло - 7 обьектов.INFO 2015-09-01 21:52:06 CSVManager.Reader: readFromFile() 31 - Данные считаны из файла 'Test random file.csv' в List<Product>. Вышло - 7 обьектов.
+INFO 2015-09-01 21:52:06 CSVManager.Product: sortedDataBy() 90 - Список продуктов отсортирован ПО ЦЕНЕ.
+INFO 2015-09-01 21:52:06 CSVManager.Product: sortedDataBy() 81 - Список продуктов отсортирован ПО ТОРГОВОЙ МАРКЕ.

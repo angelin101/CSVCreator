@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/gen.csv" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Test random file.csv" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/log_file" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/CSVManager/CompareType.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/CSVManager/IncorrectValueException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/CSVManager/InvalidNumberOfLinesException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/CSVManager/Product.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/CSVManager/Reader.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/CSVManager/Writer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/CSVManager/ProductTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/CSVManager/ReaderTest.java" charset="UTF-8" />
   </component>
 </project>

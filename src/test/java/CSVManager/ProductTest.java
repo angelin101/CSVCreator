@@ -10,7 +10,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by Ангелин on 22.08.2015.
+ * Created by РђРЅРіРµР»РёРЅ on 22.08.2015.
  */
 public class ProductTest {
 

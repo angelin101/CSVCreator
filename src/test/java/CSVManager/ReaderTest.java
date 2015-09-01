@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Ангелин on 29.08.2015.
+ * Created by РђРЅРіРµР»РёРЅ on 29.08.2015.
  */
 public class ReaderTest {
     Reader test = new Reader();

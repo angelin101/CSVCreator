@@ -1,6 +1,8 @@
 package CSVManager;
 
 
+import org.apache.log4j.Logger;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -13,6 +15,7 @@ public class Product implements Comparable<Product>{
     private String tradeMark;
     private String article;
     private int price;
+    private static final Logger LOG = Logger.getLogger(Product.class);
 
     public String getName() {
         return name;
@@ -66,6 +69,7 @@ public class Product implements Comparable<Product>{
                         return p1.getName().compareTo(p2.getName());
                     }
                 });
+                LOG.info("Список продуктов отсортирован ПО ИМЕНИ.");
                 break;
             case BY_TRADE_MARK:
                 Collections.sort(list, new Comparator<Product>() {
@@ -74,6 +78,7 @@ public class Product implements Comparable<Product>{
                         return p1.getTradeMark().compareTo(p2.getTradeMark());
                     }
                 });
+                LOG.info("Список продуктов отсортирован ПО ТОРГОВОЙ МАРКЕ.");
                 break;
             case BY_PRICE:
                 Collections.sort(list, new Comparator<Product>() {
@@ -82,9 +87,11 @@ public class Product implements Comparable<Product>{
                         return Integer.compare(p1.getPrice(), p2.getPrice());
                     }
                 });
+                LOG.info("Список продуктов отсортирован ПО ЦЕНЕ.");
                 break;
             case DEFAULT:
                 Collections.sort(list);
+                LOG.info("Список продуктов отсортирован ПО УМОЛЧАНИЮ.");
                 break;
         }
     }
